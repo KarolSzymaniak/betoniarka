@@ -1,5 +1,6 @@
 package pl.javawwa32.karolproj.model;
 
 public enum OrderStatus {
-    ZLOZONE, DOSTARCZONE, OPLACONE, ZWROCONE;
+    ORDER_PLACED, ORDER_DELIVERED, ORDER_PAID, ORDER_RETURNED;
 }
+

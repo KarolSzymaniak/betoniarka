@@ -12,14 +12,12 @@ import javax.persistence.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "ordersHistory")
-public class OrderHistory {
-
+@Table(name = "movieCopy")
+public class MovieCopy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long orderHistoryId;
+    private Long copyId;
+    // private Movie movieId;
+    private int noOfCopies;
 
-    //private Order orderId;
-    //private Copy copyId;
 }
-

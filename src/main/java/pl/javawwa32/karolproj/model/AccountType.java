@@ -1,6 +1,6 @@
 package pl.javawwa32.karolproj.model;
 
-public enum Status {
+public enum AccountType {
     STANDARD, SILVER, GOLD, PLATINUM;
-
 }
+
