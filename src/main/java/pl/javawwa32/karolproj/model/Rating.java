@@ -1,9 +1,6 @@
 package pl.javawwa32.karolproj.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -17,8 +14,18 @@ public class Rating {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Setter(AccessLevel.NONE)
+    @Column(name = "rating_id")
     private Long ratingId;
-    //private Order orderId;
-    // private Movie movieId;
-    private  int Rating;
+
+    @OneToOne
+    @JoinColumn(name = "order_id")
+    private Order orderId;
+
+    @OneToOne
+    @JoinColumn(name = "movie_id")
+    private Movie movieId;
+
+    @Column(name = "rating")
+    private int rating;
 }
