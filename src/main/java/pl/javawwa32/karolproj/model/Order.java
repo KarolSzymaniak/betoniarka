@@ -43,6 +43,6 @@ public class Order {
     private LocalDateTime returnDate;
 
     @Column(name = "order_date")
-    private LocalDateTime orderDate;
+    private LocalDateTime orderPlacedDate;
 
 }
