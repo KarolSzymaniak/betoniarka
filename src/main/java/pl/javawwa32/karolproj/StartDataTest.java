@@ -6,17 +6,17 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 import pl.javawwa32.karolproj.model.AccountType;
 import pl.javawwa32.karolproj.model.User;
-import pl.javawwa32.karolproj.repository.UserRepository;
+import pl.javawwa32.karolproj.repository.UsersRepository;
 
 import java.util.List;
 
 @Component
 public class StartDataTest {
 
-    private UserRepository userRepository;
+    private UsersRepository userRepository;
 
     @Autowired
-    public StartDataTest(UserRepository userRepository) {
+    public StartDataTest(UsersRepository userRepository) {
         this.userRepository = userRepository;
     }
 

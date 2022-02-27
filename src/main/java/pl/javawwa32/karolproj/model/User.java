@@ -10,6 +10,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
+@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +24,10 @@ public class User {
 
     @Column(name = "email", unique = true)
     private String email;
+
+    @Column(name = "password", unique = true)
+    private String password;
+
 
     @Column(name = "phone")
     private String phone;

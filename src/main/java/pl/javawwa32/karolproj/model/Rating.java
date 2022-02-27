@@ -4,11 +4,11 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
 @Table(name = "rating")
 public class Rating {
 
@@ -16,16 +16,20 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     @Column(name = "rating_id")
-    private Long ratingId;
+    public long ratingId;
 
-    @OneToOne
-    @JoinColumn(name = "order_id")
-    private Order orderId;
+    //mapowanie w opcji nr 2 z notatki
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
-    @OneToOne
+    //mapowanie w opcji nr 2 z notatki
+    @ManyToOne
     @JoinColumn(name = "movie_id")
-    private Movie movieId;
+    private Movie movie;
 
-    @Column(name = "rating")
-    private int rating;
+    private double score;
+
+    private String text;
+
 }

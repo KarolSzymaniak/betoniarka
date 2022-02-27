@@ -1,6 +1,9 @@
 package pl.javawwa32.karolproj.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
@@ -13,19 +16,16 @@ import javax.persistence.*;
 public class MovieCopy {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Setter(AccessLevel.NONE)
-    @Column(name = "copy_id")
     private Long copyId;
+    // private Movie movieId;
+    private int noOfCopies;
 
     @ManyToOne
-    @JoinColumn(name = "movie_id")
-    private Movie movieId;
-
-    @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_order_id")
     private Order order;
 
-    @Column(name = "no_of_copies")
-    private int noOfCopies;
+    @ManyToOne
+    @JoinColumn(name = "movie_movie_id")
+    private Movie movie;
 
 }
