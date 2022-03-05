@@ -22,7 +22,7 @@ public class Order {
     @Column(name = "order_id")
     private Long OrderId;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "user_id")
     private User user;
 
