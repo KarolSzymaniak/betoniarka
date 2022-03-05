@@ -34,8 +34,8 @@ public class UserService {
     }
 
     public UserResponse findResponseByEmail(String email){
-        final User client = findByEmail(email);
-        return mapper.map(client);
+        final User user = findByEmail(email);
+        return mapper.map(user);
 
     }
 

@@ -17,10 +17,10 @@ public class UserController {
 
     @GetMapping(path = "/api/user")
     public ResponseEntity<UserResponse> findByEmail(@RequestParam String email){
-        final UserResponse client = userService.findResponseByEmail(email);
+        final UserResponse user = userService.findResponseByEmail(email);
         final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("Example_header", "dummy_value");
-        return new ResponseEntity(client, httpHeaders, HttpStatus.ACCEPTED);
+        return new ResponseEntity(user, httpHeaders, HttpStatus.ACCEPTED);
     }
 
 

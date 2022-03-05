@@ -36,10 +36,11 @@ public class User {
     @Column(name = "account_type")
     private AccountType accountType;
 
-    public User(String name, String email, String phone, AccountType accountType) {
+    public User(String name, String email, String phone,String password, AccountType accountType) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.password = password;
         this.accountType = accountType;
     }
 }

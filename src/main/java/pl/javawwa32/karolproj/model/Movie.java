@@ -11,6 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
+@Builder
 @Table(name = "movies")
 public class Movie {
 
@@ -26,9 +27,13 @@ public class Movie {
     @Column(name = "genre")
     private Genre genre;
 
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "release_date")
     private LocalDate releaseDate;
 
-
+    @Column(name = "number_of_copies")
     private int numberOfCopies;
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.PERSIST)
@@ -40,6 +45,13 @@ public class Movie {
     @Column(name = "movie_status")
     private MovieStatus movieStatus;
 
-
-
+    public Movie(String title, Genre genre, String description, LocalDate releaseDate, int numberOfCopies, double avgScore, MovieStatus movieStatus) {
+        this.title = title;
+        this.genre = genre;
+        this.description = description;
+        this.releaseDate = releaseDate;
+        this.numberOfCopies = numberOfCopies;
+        this.avgScore = avgScore;
+        this.movieStatus = movieStatus;
+    }
 }

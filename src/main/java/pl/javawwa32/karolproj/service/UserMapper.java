@@ -26,7 +26,7 @@ public class UserMapper {
 
 
     public User map(UserRequest userRequest){
-        final User client = User
+        final User user = User
                 .builder()
                 .name(userRequest.getName())
                 .phone(userRequest.getPhone())
@@ -35,6 +35,6 @@ public class UserMapper {
                 .accountType(userRequest.getAccountType())
                 .build();
 
-        return client;
+        return user;
     }
 }
