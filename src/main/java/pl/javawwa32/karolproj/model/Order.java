@@ -37,14 +37,14 @@ public class Order {
     private  Set<MovieCopy> copyId;
 
     @Column(name = "price")
-    private BigDecimal price;
+    private BigDecimal totalPrice;
 
     @Column(name = "return_date")
     private LocalDateTime returnDate;
 
     @Column(name = "order_date")
-    private LocalDateTime orderPlacedDate;
+    private LocalDateTime orderPlacedDate;  // cena całego zamówienia ustawiana przy zwrocie
 
-
+    private BigDecimal pricePerDay; //koszt jednego dania wypożyczenia zamówienia
 
 }
