@@ -23,7 +23,7 @@ public class Movie {
 
     private String title;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "genre")
     private Genre genre;
 
@@ -41,7 +41,7 @@ public class Movie {
 
     private double avgScore;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     @Column(name = "movie_status")
     private MovieStatus movieStatus;
 

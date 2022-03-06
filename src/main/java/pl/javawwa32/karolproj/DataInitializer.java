@@ -110,7 +110,7 @@ public class DataInitializer implements CommandLineRunner {
                 .movie(movie3)
                 .user(user2)
                 .build();
-        
+
         moviesRepository.saveAll(Arrays.asList(movie1, movie2, movie3));
     }
 }

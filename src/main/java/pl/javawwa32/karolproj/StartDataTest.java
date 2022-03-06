@@ -1,4 +1,4 @@
-package pl.javawwa32.karolproj;
+/*package pl.javawwa32.karolproj;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
@@ -38,3 +38,5 @@ public class StartDataTest {
 //    }
 
 }
+
+ */
