@@ -8,12 +8,12 @@ import pl.javawwa32.karolproj.model.MovieStatus;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Builder
-public class MovieResponse {
-
+public class MovieMainPageDto {
 
     private long movieId;
 

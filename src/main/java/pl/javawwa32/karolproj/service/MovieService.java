@@ -32,13 +32,24 @@ public class MovieService {
 
 
 
-    public Movie findByEmail(String title){
+    public Movie findByTitle(String title){
         return moviesRepository.findByTitle(title);
     }
 
     public MovieResponse findResponseByTitle(String title){
-        final Movie movie = findByEmail(title);
+        final Movie movie = findByTitle(title);
         return mapper.map(movie);
-
     }
+
+
+
+    public Movie findByAvgScore(double avgScore){
+        return moviesRepository.findByAvgScore(avgScore);
+    }
+
+    public MovieResponse findMoviesForMainPage(double avgScore){
+        final Movie movie = findByAvgScore(avgScore);
+        return mapper.movieMainPageDto(movie);
+    }
+
 }

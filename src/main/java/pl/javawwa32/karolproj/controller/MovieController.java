@@ -30,5 +30,16 @@ public class MovieController {
     public void createMovie(@RequestBody MovieRequest movie){
         movieService.save(movie);
     }
+
+
+
+    @GetMapping(path = "/api/movieMain")
+    public ResponseEntity<MovieResponse> findByAvgScore(@RequestParam double avgScore){
+        final MovieResponse movie = movieService.findMoviesForMainPage(avgScore);
+        final HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Example_header", "dummy_value");
+        return new ResponseEntity(movie, httpHeaders, HttpStatus.ACCEPTED);
+    }
+
     
 }

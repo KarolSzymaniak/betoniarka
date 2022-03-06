@@ -105,7 +105,7 @@ public class DataInitializer implements CommandLineRunner {
                 .user(user2)
                 .build();
         var rating3 = Rating.builder()
-                .score(6.0)
+                .score(1.0)
                 .text("It's pretty good")
                 .movie(movie3)
                 .user(user2)
