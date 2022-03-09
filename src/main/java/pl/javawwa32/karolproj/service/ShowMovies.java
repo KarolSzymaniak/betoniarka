@@ -9,6 +9,7 @@ import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.Movie;
 import pl.javawwa32.karolproj.repository.MoviesRepository;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,9 +46,26 @@ public class ShowMovies {
         return movieDtos;
     }
 
+
     private List<Movie> filterByGenre(List<Movie> list, Genre genre) {
 
         list.removeIf(movie -> !movie.getGenre().equals(genre));
         return list;
+    }
+
+
+
+
+    public List<MovieMainPageDto> getByPremiereDate(Genre genre) {
+
+        List<Movie> movieList = (moviesRepository.findByOrderByReleaseDate());
+        if (genre != null) {
+            movieList = filterByGenre(movieList, genre);
+        }
+        List<MovieMainPageDto> movieDtos = new ArrayList<>();
+        for (Movie movie : movieList) {
+            movieDtos.add(MovieMapper.mapForMainPage(movie));
+        }
+        return movieDtos;
     }
 }

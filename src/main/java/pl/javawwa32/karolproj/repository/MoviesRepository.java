@@ -32,4 +32,5 @@ public interface MoviesRepository extends CrudRepository<Movie, Long> {
 
     List<Movie> findByOrderByAvgScoreDesc(Pageable pageable);
 
+    List<Movie> findByOrderByReleaseDate();
 }
