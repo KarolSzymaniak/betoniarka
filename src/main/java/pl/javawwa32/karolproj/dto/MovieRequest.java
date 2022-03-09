@@ -4,8 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import pl.javawwa32.karolproj.model.Genre;
+
 import pl.javawwa32.karolproj.model.MovieCopy;
+import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.MovieStatus;
 
 import java.time.LocalDate;
@@ -32,3 +33,4 @@ public class MovieRequest {
 
     private MovieStatus movieStatus;
 }
+

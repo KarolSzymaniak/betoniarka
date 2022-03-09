@@ -25,7 +25,7 @@ public class EmailController {
         context.setVariable("title", "#8 Spring Boot – email - szablon i wysyłanie");
         context.setVariable("description", "Tutaj jakis opis...");
         String body = templateEngine.process("template", context);
-        emailSender.sendEmail("inz.karol.szymaniak@gmail.com", "CodeCouple Newsletter", body);
+        emailSender.sendEmail("barbaradudziuk@gmail.com", "CodeCouple Newsletter", body);
         return "template";
     }
 }

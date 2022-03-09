@@ -51,6 +51,7 @@ public class DataInitializer implements CommandLineRunner {
         var movie1 = Movie.builder()
                 .title("Obywatel Kane")
                 .releaseDate(LocalDate.of(2020,10,02))
+                .description("wdwedewd ewdewdwe")
                 .numberOfCopies(1)
                 .avgScore(5.0)
                 .movieStatus(MovieStatus.CLASSIC)
@@ -60,6 +61,7 @@ public class DataInitializer implements CommandLineRunner {
         var movie2 = Movie.builder()
                 .title("Zawrót Głowy")
                 .releaseDate(LocalDate.of(2022,10,02))
+                .description("wdwedewd ewdewdwe")
                 .numberOfCopies(2)
                 .avgScore(3.0)
                 .movieStatus(MovieStatus.PREMIERE)
@@ -69,6 +71,7 @@ public class DataInitializer implements CommandLineRunner {
         var movie3 = Movie.builder()
                 .title("Ojciec chrzestny")
                 .releaseDate(LocalDate.of(1999,10,02))
+                .description("wdwedewd ewdewdwe")
                 .numberOfCopies(1)
                 .avgScore(4.0)
                 .movieStatus(MovieStatus.STANDARD)
@@ -114,3 +117,4 @@ public class DataInitializer implements CommandLineRunner {
         moviesRepository.saveAll(Arrays.asList(movie1, movie2, movie3));
     }
 }
+

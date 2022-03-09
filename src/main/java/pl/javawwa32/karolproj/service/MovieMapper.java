@@ -1,14 +1,24 @@
 package pl.javawwa32.karolproj.service;
-
 import org.springframework.stereotype.Component;
 import pl.javawwa32.karolproj.dto.*;
-import pl.javawwa32.karolproj.model.*;
+import pl.javawwa32.karolproj.model.Movie;
 
-import java.time.LocalDate;
-import java.util.Set;
+
+
 
 @Component
 public class MovieMapper {
+
+
+    public static MovieMainPageDto mapForMainPage(Movie movie) {
+        return MovieMainPageDto.builder()
+                .title(movie.getTitle())
+                .description(movie.getDescription())
+                .movieStatus(movie.getMovieStatus())
+                .genre(movie.getGenre())
+                .build();
+    }
+
 
     public MovieResponse map(Movie movie){
         final MovieResponse movieResponse = MovieResponse
@@ -42,8 +52,8 @@ public class MovieMapper {
 
 
 
-    public MovieResponse movieMainPageDto(Movie movie){
-        final MovieResponse movieResponse = MovieResponse
+    public MovieMainPageDto movieMainPageDto(Movie movie){
+        final MovieMainPageDto movieResponse = MovieMainPageDto
                 .builder()
                 .title(movie.getTitle())
                 .genre(movie.getGenre())

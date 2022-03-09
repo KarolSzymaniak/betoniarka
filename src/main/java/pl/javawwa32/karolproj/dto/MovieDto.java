@@ -1,6 +1,9 @@
 package pl.javawwa32.karolproj.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.MovieStatus;
 import pl.javawwa32.karolproj.model.Rating;
@@ -13,22 +16,19 @@ import java.util.List;
 @NoArgsConstructor
 @Data
 @Builder
-public class MovieMainPageDto {
+public class MovieDto {
 
-
-
+    private Long movieId;
     private String title;
-
+    private String director;
     private Genre genre;
-
     private String description;
-
-
-    private LocalDate releaseDate;
-
-
-    private double avgScore;
-
     private MovieStatus movieStatus;
+    private Genre movieGenre;
+    private LocalDateTime createdAt;
+    private double avgRate;
+    private LocalDate releaseDate;
+    private int numberOfCopies;;
+    private List<Rating> rateList;
 
 }

@@ -5,7 +5,6 @@ import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.MovieCopy;
 import pl.javawwa32.karolproj.model.MovieStatus;
 
-import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Set;
 @Data
@@ -28,9 +27,10 @@ public class MovieResponse {
 
     private int numberOfCopies;
 
-    private Set<MovieCopy> copies;
+   // private Set<MovieCopy> copies;
 
     private double avgScore;
 
     private MovieStatus movieStatus;
 }
+
