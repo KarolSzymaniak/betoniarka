@@ -25,6 +25,11 @@ public class MovieMainPageDto {
 
     private double avgScore;
 
+    private LocalDate releaseDate;
+
+    private int numberOfCopies;
+
+
     private MovieStatus movieStatus;
 
 }

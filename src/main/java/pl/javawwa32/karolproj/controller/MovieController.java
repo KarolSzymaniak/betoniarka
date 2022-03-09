@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
 import pl.javawwa32.karolproj.dto.MovieRequest;
 import pl.javawwa32.karolproj.dto.MovieResponse;
+import pl.javawwa32.karolproj.model.Movie;
 import pl.javawwa32.karolproj.service.MovieService;
 
 @RestController
@@ -16,15 +17,6 @@ import pl.javawwa32.karolproj.service.MovieService;
 public class MovieController {
 
     private final MovieService movieService;
-
-
-//    @GetMapping(path = "/api/movie")
-//    public ResponseEntity<MovieResponse> findByTitle(@RequestParam String title){
-//        final MovieResponse movie = movieService.findResponseByTitle(title);
-//        final HttpHeaders httpHeaders = new HttpHeaders();
-//        httpHeaders.add("Example_header", "dummy_value");
-//        return new ResponseEntity(movie, httpHeaders, HttpStatus.ACCEPTED);
-//    }
 
 
     //wyłączone przez optional
@@ -44,23 +36,6 @@ public class MovieController {
         httpHeaders.add("Example_header", "dummy_value");
         return new ResponseEntity(movie, httpHeaders, HttpStatus.ACCEPTED);
     }
-
-//
-//    @GetMapping("/api/getMovieById/{id}")
-//    public MovieDto getById(@PathVariable int id){
-//        return this.readMovieFromCentralStore.readById(id);
-//    }
-
-//    @GetMapping("/api/getMovieId/{id}")
-//    public MovieDto getById(@PathVariable long id){
-//        return this.readMovieFromStoreService.readById(id);
-//    }
-//
-//    @GetMapping("/api/getMovieTitle")
-//    public MovieDto getByTitle(@RequestParam String title){
-//        return this.readMovieFromStoreService.readByTitle(title);
-//    }
-//
 
 
 

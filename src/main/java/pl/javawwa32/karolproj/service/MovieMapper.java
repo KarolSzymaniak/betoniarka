@@ -17,6 +17,7 @@ public class MovieMapper {
                 .movieStatus(movie.getMovieStatus())
                 .genre(movie.getGenre())
                 .avgScore(movie.getAvgScore())
+                .releaseDate(movie.getReleaseDate())
                 .build();
     }
 
@@ -59,6 +60,10 @@ public class MovieMapper {
                 .title(movie.getTitle())
                 .genre(movie.getGenre())
                 .avgScore(movie.getAvgScore())
+                .description(movie.getDescription())
+                .movieStatus(movie.getMovieStatus())
+                .releaseDate(movie.getReleaseDate())
+                .numberOfCopies(movie.getNumberOfCopies())
                 .build();
         return movieResponse;
     }
