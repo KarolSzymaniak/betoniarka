@@ -16,6 +16,7 @@ public class MovieMapper {
                 .description(movie.getDescription())
                 .movieStatus(movie.getMovieStatus())
                 .genre(movie.getGenre())
+                .avgScore(movie.getAvgScore())
                 .build();
     }
 

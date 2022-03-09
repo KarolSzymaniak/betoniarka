@@ -44,7 +44,7 @@ public class MovieService {
     }
 
 
-
+//
 //    public Movie findByAvgScore(double avgScore){
 //        return moviesRepository.findByAvgScore(avgScore);
 //    }
