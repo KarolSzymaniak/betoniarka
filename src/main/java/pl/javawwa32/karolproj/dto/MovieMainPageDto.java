@@ -23,10 +23,6 @@ public class MovieMainPageDto {
 
     private String description;
 
-
-    private LocalDate releaseDate;
-
-
     private double avgScore;
 
     private MovieStatus movieStatus;

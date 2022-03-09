@@ -58,7 +58,6 @@ public class MovieMapper {
                 .builder()
                 .title(movie.getTitle())
                 .genre(movie.getGenre())
-                .releaseDate(movie.getReleaseDate())
                 .avgScore(movie.getAvgScore())
                 .build();
         return movieResponse;

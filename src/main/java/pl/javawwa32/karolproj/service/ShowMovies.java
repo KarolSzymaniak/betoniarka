@@ -1,6 +1,7 @@
 package pl.javawwa32.karolproj.service;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
@@ -17,9 +18,23 @@ import java.util.List;
 public class ShowMovies {
     private final MoviesRepository moviesRepository;
 
+    //do wyszukiwania wszystkich filmów
+//    public List<MovieMainPageDto> getByAvgRate(Genre genre) {
+//
+//        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc());
+//        if (genre != null) {
+//            movieList = filterByGenre(movieList, genre);
+//        }
+//        List<MovieMainPageDto> movieDtos = new ArrayList<>();
+//        for (Movie movie : movieList) {
+//            movieDtos.add(MovieMapper.mapForMainPage(movie));
+//        }
+//        return movieDtos;
+//    }
+
     public List<MovieMainPageDto> getByAvgRate(Genre genre) {
 
-        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc());
+        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc(PageRequest.of(0,3)));
         if (genre != null) {
             movieList = filterByGenre(movieList, genre);
         }

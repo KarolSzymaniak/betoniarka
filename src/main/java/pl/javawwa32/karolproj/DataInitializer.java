@@ -51,9 +51,10 @@ public class DataInitializer implements CommandLineRunner {
         var movie1 = Movie.builder()
                 .title("Obywatel Kane")
                 .releaseDate(LocalDate.of(2020,10,02))
-                .description("wdwedewd ewdewdwe")
+                .description("Jest przykładem film à clef, czyli przedstawia prawdziwą historię za fasadą fikcyjnego scenariusza, " +
+                        "używając zmienionych nazwisk. Opowiada on o życiu i spuściźnie Charlesa Fostera Kane'a, magnata prasowego...")
                 .numberOfCopies(1)
-                .avgScore(5.0)
+                .avgScore(4.7)
                 .movieStatus(MovieStatus.CLASSIC)
                 .genre(Genre.ACTION)
                 .build();
@@ -61,9 +62,10 @@ public class DataInitializer implements CommandLineRunner {
         var movie2 = Movie.builder()
                 .title("Zawrót Głowy")
                 .releaseDate(LocalDate.of(2022,10,02))
-                .description("wdwedewd ewdewdwe")
+                .description("James Stewart w roli cierpiącego na lęk wysokości detektywa, " +
+                        "wynajętego by śledzić żonę przyjaciela, która ma skłonności samobójcze (Kim Novak)...")
                 .numberOfCopies(2)
-                .avgScore(3.0)
+                .avgScore(3.5)
                 .movieStatus(MovieStatus.PREMIERE)
                 .genre(Genre.FANTASY)
                 .build();
@@ -71,11 +73,46 @@ public class DataInitializer implements CommandLineRunner {
         var movie3 = Movie.builder()
                 .title("Ojciec chrzestny")
                 .releaseDate(LocalDate.of(1999,10,02))
-                .description("wdwedewd ewdewdwe")
+                .description("Don Vito Corleone (Marlon Brando) jest Ojcem Chrzestnym nowojorskiej rodziny mafijnej. " +
+                        "Jest tyranem i szantażystą, a zarazem człowiekiem honoru, sprawującym rządy żelazną ręką. " +
+                        "Jego decyzje mają charakter ostateczny i nie ma od nich odwołania...")
                 .numberOfCopies(1)
-                .avgScore(4.0)
+                .avgScore(4.6)
                 .movieStatus(MovieStatus.STANDARD)
                 .genre(Genre.COMEDY)
+                .build();
+        var movie4 = Movie.builder()
+                .title("District 9")
+                .releaseDate(LocalDate.of(2009,10,9))
+                .description("Bez precyzyjnego planu jak zorganizować życie uchodźców, ludzie odizolowali ich w dystrykcie 9." +
+                        " – zamkniętej dzielnicy Johannesburga. Powołana do jej nadzoru specjalna firma Multi-" +
+                        "National United nie dba jednak o godziwe warunki dla przybyszy...")
+                .numberOfCopies(8)
+                .avgScore(4.5)
+                .movieStatus(MovieStatus.STANDARD)
+                .genre(Genre.COMEDY)
+                .build();
+
+        var movie5 = Movie.builder()
+                .title("The Batman")
+                .releaseDate(LocalDate.of(2022,3,4))
+                .description("The Batman – amerykański fantastycznonaukowy film akcji na podstawie serii komiksów o superbohaterze " +
+                        "o tym samym imieniu wydawnictwa DC Comics...")
+                .numberOfCopies(5)
+                .avgScore(4.9)
+                .movieStatus(MovieStatus.PREMIERE)
+                .genre(Genre.FANTASY)
+                .build();
+
+        var movie6 = Movie.builder()
+                .title("Spider-Man: Bez drogi do domu")
+                .releaseDate(LocalDate.of(2021,12,17))
+                .description("Spider-Man: Bez drogi do domu – amerykański fantastycznonaukowy film akcji " +
+                        "na podstawie serii komiksów o superbohaterze o tym samym pseudonimie wydawnictwa Marvel Comics...")
+                .numberOfCopies(5)
+                .avgScore(4.8)
+                .movieStatus(MovieStatus.PREMIERE)
+                .genre(Genre.FANTASY)
                 .build();
 
         var copy1 = MovieCopy.builder()
@@ -114,7 +151,7 @@ public class DataInitializer implements CommandLineRunner {
                 .user(user2)
                 .build();
 
-        moviesRepository.saveAll(Arrays.asList(movie1, movie2, movie3));
+        moviesRepository.saveAll(Arrays.asList(movie1, movie2, movie3,movie4,movie5,movie6));
     }
 }
 

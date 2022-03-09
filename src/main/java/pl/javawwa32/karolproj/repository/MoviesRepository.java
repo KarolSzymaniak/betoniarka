@@ -19,11 +19,17 @@ public interface MoviesRepository extends CrudRepository<Movie, Long> {
 
     Movie findByTitle(String title);
 
-  //  Page<Movie> findByTitle(String name, Pageable pageable);
+   Page<Movie> findByTitle(String name, Pageable pageable);
+
+
 
 
     Movie findByAvgScore(double avgScore);
 
 
-    List<Movie> findByOrderByAvgScoreDesc();
+    //do wyszukiwania wszystkich filmów
+    //List<Movie> findByOrderByAvgScoreDesc();
+
+    List<Movie> findByOrderByAvgScoreDesc(Pageable pageable);
+
 }
