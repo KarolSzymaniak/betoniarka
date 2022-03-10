@@ -2,6 +2,7 @@ package pl.javawwa32.karolproj.controller;
 
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,14 +10,18 @@ import org.springframework.web.bind.annotation.*;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
 import pl.javawwa32.karolproj.dto.MovieRequest;
 import pl.javawwa32.karolproj.dto.MovieResponse;
-import pl.javawwa32.karolproj.model.Movie;
+import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.service.MovieService;
+import pl.javawwa32.karolproj.service.ReadMovieController;
 
 @RestController
 @RequiredArgsConstructor
 public class MovieController {
 
     private final MovieService movieService;
+    private  final ReadMovieController readMovieController;
+
+
 
 
     //wyłączone przez optional
@@ -29,6 +34,7 @@ public class MovieController {
 //    }
 
 
+    //szukanie fimów po nazwie
     @GetMapping(path = "/api/movie")
     public ResponseEntity<MovieMainPageDto> findByTitle(@RequestParam String title){
         final MovieMainPageDto movie = movieService.findResponseByTitle(title);
@@ -38,7 +44,7 @@ public class MovieController {
     }
 
 
-
+    //dodawanie fimów
     @PostMapping(path = "/api/movie")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createMovie(@RequestBody MovieRequest movie){
@@ -46,13 +52,18 @@ public class MovieController {
     }
 
 
-//    @GetMapping(path = "/api/movieMain")
-//    public ResponseEntity<MovieResponse> findByAvgScore(@RequestParam double avgScore){
-//        final MovieResponse movie = movieService.findMoviesForMainPage(avgScore);
-//        final HttpHeaders httpHeaders = new HttpHeaders();
-//        httpHeaders.add("Example_header", "dummy_value");
-//        return new ResponseEntity(movie, httpHeaders, HttpStatus.ACCEPTED);
-//    }
+    //szukanie fimów po gatunku
+    @GetMapping(path = "/api/movieGenre")
+    public ResponseEntity<MovieMainPageDto> findByGenre(@RequestParam Genre genre){
+        final MovieMainPageDto movie = movieService.findResponseByGenre(genre);
+        final HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.add("Example_header", "dummy_value");
+        return new ResponseEntity(movie, httpHeaders, HttpStatus.ACCEPTED);
+    }
 
-    
+    //szukanie fimów po id
+    @GetMapping("api/get/{id}")
+    public MovieMainPageDto getById(@PathVariable Long id){
+        return this.readMovieController.readById(id);
+    }
 }

@@ -16,19 +16,8 @@ import java.util.List;
 public class HomeMovieController {
 
    private final ShowMovies showMovies;
-//
-//    @GetMapping("/api/titles")
-//    public List<MovieMainPageDto> getByTitleAlphabetical(@RequestParam(required = false) MovieGenre genre) {
-//        return this.showMovies.getByAlphabeticalOrder(genre);
-//    }
-//    @GetMapping("/api/premiereDate")
-//    public List<MovieMainPageDto> getByPremDate(@RequestParam (required = false)MovieGenre genre) {
-//        return this.showMovies.getByPremiereDate(genre);
-//    }
-//    @GetMapping("/api/creationDate")
-//    public List<MovieMainPageDto> getByCreationDate(@RequestParam(required = false)MovieGenre genre) {
-//        return this.showMovies.getByCreationDate(genre);
-//    }
+
+
     @GetMapping("/api/avgRate")
     public List<MovieMainPageDto> getByAvgRate(@RequestParam(required = false) Genre genre) {
         return this.showMovies.getByAvgRate(genre);
@@ -38,4 +27,5 @@ public class HomeMovieController {
     public List<MovieMainPageDto> getByPremiereDate(@RequestParam (required = false) Genre genre) {
         return this.showMovies.getByPremiereDate(genre);
     }
+
 }

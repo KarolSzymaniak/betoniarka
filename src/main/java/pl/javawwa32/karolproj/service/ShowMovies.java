@@ -19,7 +19,22 @@ import java.util.List;
 public class ShowMovies {
     private final MoviesRepository moviesRepository;
 
-    //do wyszukiwania wszystkich filmów
+//    public List<MovieMainPageDto> getByAlphabeticalOrder(Genre genre) {
+//
+//        List<Movie> movieList = (moviesRepository.findByMovieByTitle());
+//        if (genre != null) {
+//            movieList = filterByGenre(movieList, genre);
+//        }
+//        List<MovieMainPageDto> movieDtos = new ArrayList<>();
+//        for (Movie movie : movieList) {
+//            movieDtos.add(MovieMapper.mapForMainPage(movie));
+//        }
+//        return movieDtos;
+//    }
+
+
+
+    //do wyszukiwania wszystkich filmów po ocenie
 //    public List<MovieMainPageDto> getByAvgRate(Genre genre) {
 //
 //        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc());

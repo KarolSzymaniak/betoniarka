@@ -5,8 +5,11 @@ import org.springframework.stereotype.Service;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
 import pl.javawwa32.karolproj.dto.MovieRequest;
 import pl.javawwa32.karolproj.dto.MovieResponse;
+import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.Movie;
 import pl.javawwa32.karolproj.repository.MoviesRepository;
+
+import java.util.List;
 
 @Service
 public class MovieService {
@@ -40,6 +43,15 @@ public class MovieService {
 
     public MovieMainPageDto findResponseByTitle(String title){
         final Movie movie = findByTitle(title);
+        return mapper.movieMainPageDto(movie);
+    }
+
+
+    public Movie findByGenre(Genre genre){
+        return moviesRepository.findByGenre(genre);
+    }
+    public MovieMainPageDto findResponseByGenre(Genre genre) {
+        final Movie movie = findByGenre(genre);
         return mapper.movieMainPageDto(movie);
     }
 
