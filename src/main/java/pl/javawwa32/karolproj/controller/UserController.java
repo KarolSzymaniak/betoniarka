@@ -24,6 +24,7 @@ public class UserController {
     }
 
 
+
     @PostMapping(path = "/api/user")
     @ResponseStatus(code = HttpStatus.CREATED)
     public void createClient(@RequestBody UserRequest user){

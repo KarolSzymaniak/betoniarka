@@ -9,14 +9,13 @@ import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.model.Movie;
 import pl.javawwa32.karolproj.repository.MoviesRepository;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class ShowMovies {
+public class MainPageMoviesService {
     private final MoviesRepository moviesRepository;
 
 //    public List<MovieMainPageDto> getByAlphabeticalOrder(Genre genre) {
@@ -50,12 +49,12 @@ public class ShowMovies {
 
     public List<MovieMainPageDto> getByAvgRate(Genre genre) {
 
-        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc(PageRequest.of(0,3)));
+        List<Movie> moviesList = (moviesRepository.findByOrderByAvgScoreDesc(PageRequest.of(0,3)));
         if (genre != null) {
-            movieList = filterByGenre(movieList, genre);
+            moviesList = filterByGenre(moviesList, genre);
         }
         List<MovieMainPageDto> movieDtos = new ArrayList<>();
-        for (Movie movie : movieList) {
+        for (Movie movie : moviesList) {
             movieDtos.add(MovieMapper.mapForMainPage(movie));
         }
         return movieDtos;
@@ -73,14 +72,14 @@ public class ShowMovies {
 
     public List<MovieMainPageDto> getByPremiereDate(Genre genre) {
 
-        List<Movie> movieList = (moviesRepository.findByOrderByReleaseDate());
+        List<Movie> moviesList = (moviesRepository.findByOrderByReleaseDate());
         if (genre != null) {
-            movieList = filterByGenre(movieList, genre);
+            moviesList = filterByGenre(moviesList, genre);
         }
-        List<MovieMainPageDto> movieDtos = new ArrayList<>();
-        for (Movie movie : movieList) {
-            movieDtos.add(MovieMapper.mapForMainPage(movie));
+        List<MovieMainPageDto> movieDto = new ArrayList<>();
+        for (Movie movie : moviesList) {
+            movieDto.add(MovieMapper.mapForMainPage(movie));
         }
-        return movieDtos;
+        return movieDto;
     }
 }
