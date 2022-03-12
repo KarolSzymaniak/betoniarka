@@ -18,34 +18,7 @@ import java.util.List;
 public class MainPageMoviesService {
     private final MoviesRepository moviesRepository;
 
-//    public List<MovieMainPageDto> getByAlphabeticalOrder(Genre genre) {
-//
-//        List<Movie> movieList = (moviesRepository.findByMovieByTitle());
-//        if (genre != null) {
-//            movieList = filterByGenre(movieList, genre);
-//        }
-//        List<MovieMainPageDto> movieDtos = new ArrayList<>();
-//        for (Movie movie : movieList) {
-//            movieDtos.add(MovieMapper.mapForMainPage(movie));
-//        }
-//        return movieDtos;
-//    }
-
-
-
-    //do wyszukiwania wszystkich filmów po ocenie
-//    public List<MovieMainPageDto> getByAvgRate(Genre genre) {
-//
-//        List<Movie> movieList = (moviesRepository.findByOrderByAvgScoreDesc());
-//        if (genre != null) {
-//            movieList = filterByGenre(movieList, genre);
-//        }
-//        List<MovieMainPageDto> movieDtos = new ArrayList<>();
-//        for (Movie movie : movieList) {
-//            movieDtos.add(MovieMapper.mapForMainPage(movie));
-//        }
-//        return movieDtos;
-//    }
+    //do wyszukiwania wszystkich filmów po ocenie z paginacją
 
     public List<MovieMainPageDto> getByAvgRate(Genre genre) {
 
@@ -53,11 +26,11 @@ public class MainPageMoviesService {
         if (genre != null) {
             moviesList = filterByGenre(moviesList, genre);
         }
-        List<MovieMainPageDto> movieDtos = new ArrayList<>();
+        List<MovieMainPageDto> movieDto = new ArrayList<>();
         for (Movie movie : moviesList) {
-            movieDtos.add(MovieMapper.mapForMainPage(movie));
+            movieDto.add(MovieMapper.mapForMainPage(movie));
         }
-        return movieDtos;
+        return movieDto;
     }
 
 

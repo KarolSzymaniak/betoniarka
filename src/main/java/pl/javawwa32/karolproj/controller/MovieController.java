@@ -2,24 +2,22 @@ package pl.javawwa32.karolproj.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
 import pl.javawwa32.karolproj.dto.MovieRequest;
-import pl.javawwa32.karolproj.dto.MovieResponse;
 import pl.javawwa32.karolproj.model.Genre;
 import pl.javawwa32.karolproj.service.MovieService;
-import pl.javawwa32.karolproj.service.ReadMovieController;
+import pl.javawwa32.karolproj.service.ReadMovie;
 
 @RestController
 @RequiredArgsConstructor
 public class MovieController {
 
     private final MovieService movieService;
-    private  final ReadMovieController readMovieController;
+    private  final ReadMovie readMovie;
 
 
 
@@ -64,6 +62,6 @@ public class MovieController {
     //szukanie fimów po id
     @GetMapping("api/get/{id}")
     public MovieMainPageDto getById(@PathVariable Long id){
-        return this.readMovieController.readById(id);
+        return this.readMovie.readById(id);
     }
 }

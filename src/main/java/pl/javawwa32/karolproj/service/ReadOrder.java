@@ -4,20 +4,22 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.javawwa32.karolproj.dto.MovieMainPageDto;
+import pl.javawwa32.karolproj.dto.OrderDto;
 import pl.javawwa32.karolproj.repository.MoviesRepository;
+import pl.javawwa32.karolproj.repository.OrdersRepository;
 
 import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class ReadMovieController {
+public class ReadOrder {
 
     @Autowired
-    private final MoviesRepository moviesRepository;
+    private final OrdersRepository ordersRepository;
 
-    public MovieMainPageDto readById(Long id){
-        return MovieMapper.mapForMainPage(moviesRepository.findById(id).get());
+    public OrderDto readById(Long id){
+        return OrderMapper.mapForMainPage(ordersRepository.findById(id).get());
     }
 
 }
